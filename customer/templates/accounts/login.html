@@ -1,0 +1,34 @@
+{% extends 'base.html'%} {% block content%} {% if error %} {{error}} <br/><br/> {% endif%}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6" style="padding-left: 300px;">
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="username">UserName</label>
+                        <input type="text" class="form-control" placeholder="UserName" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Confirm Password</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password1">
+                    </div>
+                    <!-- <input type="hidden" class="form-control" placeholder="amount" name="amount"> -->
+
+                    <!-- <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Check me out
+                         </label>
+                    </div> -->
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+                <!-- /.box-body -->
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

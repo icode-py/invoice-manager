@@ -1,0 +1,49 @@
+{% extends 'base.html'%} {% block content%} {% if error %} {{error}} <br/><br/> {% endif%}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6" style="padding-left: 300px;">
+            <h1>Signup</h1>
+            <form action="{% url 'signup' %}" method="POST">
+                {% csrf_token %}
+                <div class="box-body">
+                    <div class="form-group">
+                        <label for="username">UserName</label>
+                        <input type="text" class="form-control" placeholder="UserName" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="Phone">Phone</label>
+                        <input type="text" class="form-control" placeholder="Phone" name="phone">
+                    </div>
+                    <div class="form-group">
+                        <label for="Email">Email</label>
+                        <input type="email" class="form-control" placeholder="Email" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password1">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Confirm Password</label>
+                        <input type="password" class="form-control" placeholder="Password" name="password2">
+                    </div>
+                    <!-- <input type="hidden" class="form-control" placeholder="amount" name="amount"> -->
+
+                    <!-- <div class="checkbox">
+                        <label>
+                          <input type="checkbox"> Check me out
+                         </label>
+                    </div> -->
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+
+                </div>
+                <!-- /.box-body -->
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
